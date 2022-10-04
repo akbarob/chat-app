@@ -1,10 +1,11 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import React, { useState } from "react";
 import { auth, db } from "../firebase";
+import { IoMdSend } from "react-icons/io";
 const style = {
-  form: `h-14 w-full max-w[720px] flex text-xl absolute bottom-[0] `,
-  input: `w-full text-xl p-3 bg-gray-900 text-white outline-none border-none`,
-  button: `w-[20%] bg-green-500`,
+  form: ` h-14 w-full max-w[720px] flex text-xl absolute bottom-[0] `,
+  input: ` rounded-2xl w-full text-xl p-3 bg-gray-900 text-white outline-none border-none`,
+  button: `w-[20%] bg-green-500 flex items-center justify-center text-white rounded-full text-sm`,
 };
 type Props = {
   scroll: any;
@@ -35,11 +36,11 @@ export const SendMessage = ({ scroll }: Props) => {
       />
       {input === "" ? (
         <button className={style.button} type="submit" disabled>
-          send
+          Send <IoMdSend />
         </button>
       ) : (
         <button className={style.button} type="submit">
-          send
+          Send <IoMdSend />
         </button>
       )}
     </form>
